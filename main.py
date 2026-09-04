@@ -6,7 +6,6 @@ from IdentiInt import MiniLexer
 # python main.py รันทุกไฟล์ใน folder 
 # python main.py test1.txt test2.txt รันทุก file เแฑาะที่เป็น args  
 
-
 def process_file(file_path, lexer):
     print(f"\n==================================================")
     print(f"  Processing File: {file_path}")
