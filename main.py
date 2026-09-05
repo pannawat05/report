@@ -1,19 +1,31 @@
-from CalcLexer import CalcLexer
-from IdentiInt import MiniLexer
-lexer = CalcLexer()
-minilexer = MiniLexer()
+from CalcLexer import CalcLexer as operlexcer
+from IdentiInt import MiniLexer as letterlexcer
+
+lexer = operlexcer()
+minilexer = letterlexcer()
+
 
 while True:
-    # text = input('calc > ')
+    text = input('text > ')
 
-    # if text:
-    #     tokens = lexer.tokenize(text)
+    if not text:
+        continue
 
-    #     for token in tokens:
-    #         print(token)
+    # แยก input เป็นส่วน ๆ ด้วย space
+    parts = text.split()
 
-    text = input('mini > ')
-    if text:
-        tokens = minilexer.tokenize(text)
-        for token in tokens:
-             print(f"Type: {token.type:<10} Value: {token.value}")
+    for part in parts:
+
+        # ถ้าเป็น operator
+        if part in ['+', '-', '*', '/', '=', '>', '<', '>=', '<=', '==', '!=', '++', '--', '(', ')']:
+            tokens = lexer.tokenize(part)
+
+            for token in tokens:
+                print(f"Type: {token.type:<10} Value: {token.value}")
+
+        # ถ้าเป็นตัวอักษรหรือตัวเลข
+        else:
+            token1 = minilexer.tokenize(part)
+
+            for token in token1:
+                print(f"Type: {token.type:<10} Value: {token.value}")

@@ -1,6 +1,5 @@
 import sys
-from sly import Lexer
-
+from sly import Lexer 
 class MiniLexer(Lexer):
     tokens = {INT, ID, IF, THEN, ELSE, ENDIF, WHILE, DO, ENDWHILE, PRINT, NEWLINE, READ}
     
