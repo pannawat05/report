@@ -1,0 +1,18 @@
+// Step 1: Variable declarations and math ops
+x = 100;
+y = 25;
+sum = (x + y) * 2;
+
+/* Step 2: Conditional check
+   and string output */
+if sum >= 200 && x != y then
+    print "Result is valid";
+    sum--;
+else
+    print "Invalid range";
+endif
+
+# Error cases for lexer testing
+bad_var$ = 50;
+message = "Unclosed string;
+3d_point = 999 @;
